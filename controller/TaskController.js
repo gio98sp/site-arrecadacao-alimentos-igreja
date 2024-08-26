@@ -59,7 +59,7 @@ const updateOneTask = async (req, res) => {
   try {
     const task = req.body;
     await Task.updateOne({ _id: req.params.id }, task);
-    message = "Tarefa atualizada com sucesso!";
+    message = "Doação atualizada com sucesso!";
     type = "success";
     res.redirect("/");
   } catch (err) {
@@ -70,7 +70,7 @@ const updateOneTask = async (req, res) => {
 const deleteOneTask = async (req, res) => {
   try {
     await Task.deleteOne({ _id: req.params.id });
-    message = "Tarefa apagada com sucesso!";
+    message = "Doação apagada com sucesso!";
     type = "success";
     res.redirect("/");
   } catch (err) {
