@@ -7,40 +7,79 @@
 }
 
 body {
-  background-color: #202024;
   width: 100%;
   height: 100%;
   color: #fff;
+  outline-width: 5px;
+  background-color: #016795;
 }
 
 header {
-  background-color: #005290;
+  background-color: #016795;
   padding: 3rem;
   margin: 0.5rem;
   text-align: center;
+  background-image: url('./banner-doe.jpg'), url('./banner-doe.jpg');
+  background-repeat: no-repeat;
+  background-position: right, left;
+  background-size: contain;
+  border: 1rem solid #202024;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
 }
 
 header h1 {
-  padding-bottom: 3rem;
+  margin: auto;
+  margin-bottom: 3rem;
+  padding: .5rem;
+  width: fit-content;
+  background-color: #202024;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+}
+
+header h1 i {
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
 input {
-  margin: 0;
+  margin: 1px;
   border: none;
-  border-radius: 0;
-  width: 70%;
+  border-radius: 2%;
+  width: 50%;
   padding: 0.6rem;
   font-size: 1rem;
   outline: none;
   background-color: #202024;
   color: #fff;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  -ms-border-radius: 2%;
+  -o-border-radius: 2%;
 }
 
-button {
+::placeholder {
+  color: #888;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
   padding: 0.6rem;
   width: 25%;
   background-color: #202024;
-  color: rgb(109, 109, 109);
+  color: rgb(7, 189, 7);
   text-align: center;
   font-size: 1rem;
   cursor: pointer;
@@ -50,17 +89,24 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.button:hover {
   background-color: #004e14;
   color: #fff;
 }
 
 section#tasks {
-  margin: 0.5rem;
+  width: 100%;
 }
 
 ul {
+  margin: 2rem 0.5rem;
   list-style: none;
+  border: 1rem solid #202024;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
 }
 
 ul li {
@@ -72,13 +118,36 @@ ul li {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 ul li a {
   text-decoration: none;
-  color: #fff;
-  padding-left: 2rem;
+  color: #eee;
+  padding-left: 1.1rem;
+}
+
+a.disabled {
+  pointer-events: none;
+}
+
+.text {
+  width: 25rem;
+}
+
+ul li i {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.address {
+  width: 40rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .text, .address {
+    width: auto;
+  }
 }
 
 ul li span {
@@ -92,6 +161,7 @@ ul li div {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0.5rem;
 }
 
 ul li:nth-child(odd) {
@@ -100,6 +170,13 @@ ul li:nth-child(odd) {
 
 ul li:hover {
   background: #5a5a5a;
+}
+
+.block {
+  background: none;
+  border: none;
+	font: inherit;
+	cursor: pointer;
 }
 
 a.btnUpdate {
@@ -283,4 +360,51 @@ ul li a.check-false::before{
   height: 13px;
   width: 13px;
   border-width: 2px;
+}
+
+.img {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+}
+
+.img .img1, .img2, .img3 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  margin: auto;
+  border: 1rem solid #202024;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+}
+
+.img .img1 {
+  background-image: url('./alimentos.jpg');
+  width: 20%;
+}
+
+.img .img2 {
+  background-image: url('./igreja.jpg');
+  width: 50%;
+}
+
+.img .img3 {
+  background-image: url('./doacao.png');
+  width: 20%;
+}
+
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  line-height: 1.5rem;
+  background-color: #202024;
+  width: 100%;
+}
+
+footer a {
+  color: #eee;
 }

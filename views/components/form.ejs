@@ -1,5 +1,7 @@
-<h1><%= titleForm %></h1>
+<h1><%= titleForm %> <br> <i>R. Maria Benedita Paula, 130, Pilar do Sul - SP, 18185-000</i></h1>
 <form action="/<%= action %>" method="post">
-    <input type="text" name="task" id="task" placeholder="Insira uma tarefa" value="<%= value %>">
-    <button id="<%= idBtn %>" type="submit"><%= nameBtn %></button>
+    <input type="text" name="name" id="name" placeholder="Nome do doador" value="<%= value %>">
+    <input type="text" name="address" id="address" placeholder="Endereço para coleta" value="<%= value %>">
+    <input type="text" name="phone" id="phone" placeholder="Celular" value="<%= value %>">
+    <button id="<%= idBtn %>" class="button" type="submit"><%= nameBtn %></button>
 </form>

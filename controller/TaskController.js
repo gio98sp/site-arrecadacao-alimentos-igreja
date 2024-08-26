@@ -8,13 +8,13 @@ const getAllTasks = async (req, res) => {
     setTimeout(() => {
       message = "";
     }, 1000);
-    const tasksList = await Task.find();
+    const tasksList = await Task.find().sort({_id:-1});
     return res.render("index", {
       tasksList,
       task: null,
       taskDelete: null,
       message,
-      type,
+      type
     });
   } catch (err) {
     res.status(500).send({ error: err.message });
@@ -24,15 +24,15 @@ const getAllTasks = async (req, res) => {
 const createTask = async (req, res) => {
   const task = req.body;
 
-  if (!task.task) {
-    message = "Insira um texto, antes de adicionar a tarefa!";
+  if (!task.name || !task.address || !task.phone) {
+    message = "Complete os campos antes de adicionar!";
     type = "danger";
     return res.redirect("/");
   }
 
   try {
     await Task.create(task);
-    message = "Tarefa criada com sucesso!";
+    message = "Doação criada com sucesso!";
     type = "success";
     return res.redirect("/");
   } catch (err) {
